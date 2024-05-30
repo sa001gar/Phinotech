@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Phinotech</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.querySelector('#theme-toggle');
+            const htmlElement = document.documentElement;
+            const storedTheme = localStorage.getItem('theme');
+
+            // Function to set the theme
+            function setTheme(theme) {
+                if (theme === 'dark') {
+                    htmlElement.classList.add('dark');
+                    themeToggle.textContent = 'Light Mode';
+                } else {
+                    htmlElement.classList.remove('dark');
+                    themeToggle.textContent = 'Dark Mode';
+                }
+                localStorage.setItem('theme', theme);
+            }
+
+            // Set the initial theme based on localStorage
+            if (storedTheme) {
+                setTheme(storedTheme);
+            } else {
+                setTheme('light');  // Default to light mode
+            }
+
+            // Event listener for the theme toggle button
+            themeToggle.addEventListener('click', function() {
+                if (htmlElement.classList.contains('dark')) {
+                    setTheme('light');
+                } else {
+                    setTheme('dark');
+                }
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800 dark:text-gray-200">Phinotech</a>
+            <nav class="space-x-4">
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Home</a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">About Us</a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Services</a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Contact</a>
+                <button id="theme-toggle" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">
+                    Dark Mode
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- About Section -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h1 class="text-3xl font-bold mb-4">About Phinotech</h1>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Welcome to Phinotech, your trusted partner for all your computer and laptop repair needs. With a passion for technology and a commitment to excellence, we've been serving our community for 6 years.
+            </p>
+            
+            <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                At Phinotech, our mission is simple yet profound: to keep your digital life running smoothly. We understand the frustration that comes with a malfunctioning computer or laptop. It disrupts your work, your studies, and your entertainment. That's where we come in. Our team of skilled technicians is dedicated to providing prompt and reliable repair services to get you back on track.
+            </p>
+
+            <h2 class="text-2xl font-bold mb-4">Why Choose Phinotech?</h2>
+            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mb-4">
+                <li><strong>Expertise:</strong> Our technicians are certified and experienced in diagnosing and repairing a wide range of computer and laptop issues. From hardware problems to software glitches, we've got you covered.</li>
+                <li><strong>Quality Service:</strong> We believe in delivering top-notch service with a smile. We take the time to explain the issue, discuss your options, and provide transparent pricing. You can trust us to provide honest recommendations and quality repairs.</li>
+                <li><strong>Timely Solutions:</strong> We know that time is of the essence. That's why we strive to provide quick turnaround times without compromising on the quality of our work. We understand the importance of your devices in your daily life.</li>
+                <li><strong>Customer-Centric Approach:</strong> Your satisfaction is our priority. We listen to your concerns, answer your questions, and ensure you leave our shop with a smile of relief, knowing your computer or laptop is in capable hands.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mb-4">Our Services</h2>
+            <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 mb-4">
+                <li>Laptop Screen Repair</li>
+                <li>Hardware Upgrades</li>
+                <li>Virus and Malware Removal</li>
+                <li>Data Recovery</li>
+                <li>Software Installation and Troubleshooting</li>
+                <li>Custom-Built Computers</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mb-4">Visit Us Today</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                We invite you to visit our conveniently located shop at Budbud. Our friendly team is ready to assist you with all your computer and laptop repair needs. Whether you're a student, a professional, or a tech enthusiast, we're here to help you make the most of your digital world.
+            </p>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Thank you for considering Phinotech as your trusted partner for computer and laptop repairs. We look forward to serving you and building lasting relationships with our valued customers.
+            </p>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                For inquiries or to schedule a repair, please contact us.
+            </p>
+        </section>
+
+        <!-- Comment Section -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4">Post a Comment</h2>
+            <form class="space-y-4">
+                <div>
+                    <label for="comment-name" class="block text-gray-600 dark:text-gray-400">Name</label>
+                    <input type="text" id="comment-name" class="w-full px-4 py-2 border rounded-lg" placeholder="Your Name">
+                </div>
+                <div>
+                    <label for="comment-message" class="block text-gray-600 dark:text-gray-400">Message</label>
+                    <textarea id="comment-message" class="w-full px-4 py-2 border rounded-lg" rows="4" placeholder="Your Comment"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Post Comment</button>
+            </form>
+        </section>
+
+        <!-- Social Plugin Section -->
+        <section class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">Follow Us</h2>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Facebook</a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Twitter</a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">LinkedIn</a>
+                <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Instagram</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 shadow mt-8">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <p class="text-gray-600 dark:text-gray-400">&copy; 2024 Phinotech. All rights reserved.</p>
+                <nav class="space-x-4">
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200">Terms of Service</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
