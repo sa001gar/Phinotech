@@ -20,7 +20,22 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
+  <style>
+    #hero-image-container {
+      perspective: 400px;
+    }
+    #hero-image {
+      transform: rotateY(-20deg);
+    }
+    @media (max-width: 640px) {
+      #hero-image-container {
+        perspective: none;
+      }
+      #hero-image {
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-gray-100 h-screen">
@@ -81,15 +96,17 @@
       class="bg-blue-900 w-full h-auto sm:h-96 flex flex-col sm:flex-row-reverse sm:gap-12 shadow-xl relative"
     >
       <div
-        class="w-full sm:w-5/12 sm:mt-6 sm:ml-10 sm:p-6 sm:pt-12 shadow-sm"
+        class="w-full sm:w-5/12 sm:mt-6 sm:ml-10 sm:p-6 sm:pt-12 shadow-lg drop-shadow-xl"
       >
-        <img
+      <div id="hero-image-container">
+        <img id="hero-image"
           src="media/laptop-repair.png"
           class="rounded-l mx-auto"
           width="350px"
           alt="Laptop Repair"
           tooltip="Laptop Repair"
         />
+      </div>
       </div>
       <div
         class="text-white max-w-full mt-4 text-balance mx-2 px-2 sm:w-7/12 sm:mt-6 sm:ml-10 sm:p-6 sm:pt-16 sm:leading-relaxed font-sans"
