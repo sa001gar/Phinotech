@@ -278,6 +278,7 @@
   }
   .header__link:hover, .header__link[aria-current] {
     color:royalblue;
+    /* text-decoration: underline; */
   }
   
   .header__nav-btn {
