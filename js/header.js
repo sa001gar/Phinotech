@@ -1,5 +1,4 @@
-// File#: _1_main-header
-// Usage: codyhouse.co/license
+// JS Function
 (function() {
 	var mainHeader = document.getElementsByClassName('js-header');
 	if( mainHeader.length > 0 ) {
